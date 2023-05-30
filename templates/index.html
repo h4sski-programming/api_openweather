@@ -4,32 +4,49 @@
 
 {% block content %}
 
-<table class="table table-sm w-25">
-    <h4>Lon = {{ weather_json.coord.lon }} Lat = {{ weather_json.coord.lat }}</h4>
+<h4>{{ city_json.name }} {{ city_json.country }}</h4>
+<p class="mb-4">LON = {{ city_json.lon }} / LAT = {{ city_json.lat }}</p>
+
+<div class="d-inline-block mw-50"><table class="table table-sm">
     <thead>
         <th>Key</th>
         <th>Value</th>
     </thead>
     <tbody>
         <tr>
-            <td>Temperature [°C]</td>
+            <td>Main</td>
             <td>
                 <table class="table"><tbody>
                     <tr>
                         <td>Now</td>
-                        <td>{{ weather_json.main.temp }}</td>
+                        <td>{{ weather_json.weather[0].main }}</td>
+                    </tr>
+                    <tr>
+                        <td>Description</td>
+                        <td>{{ weather_json.weather[0].description }}</td>
+                    </tr>
+                </tbody></table>
+            </td>
+        </tr>
+        <tr>
+            <td>Temperature</td>
+            <td>
+                <table class="table"><tbody>
+                    <tr>
+                        <td>Now</td>
+                        <td>{{ weather_json.main.temp }} °C</td>
                     </tr>
                     <tr>
                         <td>Feels like</td>
-                        <td>{{ weather_json.main.feels_like }}</td>
+                        <td>{{ weather_json.main.feels_like }} °C</td>
                     </tr>
                     <tr>
                         <td>Min</td>
-                        <td>{{ weather_json.main.temp_min }}</td>
+                        <td>{{ weather_json.main.temp_min }} °C<td>
                     </tr>
                     <tr>
                         <td>Max</td>
-                        <td>{{ weather_json.main.temp_max }}</td>
+                        <td>{{ weather_json.main.temp_max }} °C<td>
                     </tr>
                 </tbody></table>
             </td>
@@ -54,6 +71,14 @@
             </td>
         </tr>
     </tbody>
-</table>
+</table></div>
+
+<div class="d-inline-block w-50">
+    <h5>Full city_json output</h5>
+    <p>{{ city_json }}</p>
+
+    <h5>Full weather_json output</h5>
+    <p>{{ weather_json }}</p>
+</div>
 
 {% endblock %}
