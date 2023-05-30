@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+
+
+<div class="row">
+    {{ render_form(form_city) }}
+</div>
+{% endblock %}

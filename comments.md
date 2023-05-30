@@ -7,6 +7,19 @@
 - weather json based on https://openweathermap.org/current
 
 
+
+# Usefull commands
+
+To check installed packages:
+
+    pip list
+
+To save all packages:
+
+    pip freeze > requirements.txt
+
+
+
 # From ChatGPT:
 
 To start building an API application, you can follow these general steps:

@@ -7,78 +7,139 @@
 <h4>{{ city_json.name }} {{ city_json.country }}</h4>
 <p class="mb-4">LON = {{ city_json.lon }} / LAT = {{ city_json.lat }}</p>
 
-<div class="d-inline-block mw-50"><table class="table table-sm">
-    <thead>
-        <th>Key</th>
-        <th>Value</th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Main</td>
-            <td>
-                <table class="table"><tbody>
-                    <tr>
-                        <td>Now</td>
-                        <td>{{ weather_json.weather[0].main }}</td>
-                    </tr>
-                    <tr>
-                        <td>Description</td>
-                        <td>{{ weather_json.weather[0].description }}</td>
-                    </tr>
-                </tbody></table>
-            </td>
-        </tr>
-        <tr>
-            <td>Temperature</td>
-            <td>
-                <table class="table"><tbody>
-                    <tr>
-                        <td>Now</td>
-                        <td>{{ weather_json.main.temp }} °C</td>
-                    </tr>
-                    <tr>
-                        <td>Feels like</td>
-                        <td>{{ weather_json.main.feels_like }} °C</td>
-                    </tr>
-                    <tr>
-                        <td>Min</td>
-                        <td>{{ weather_json.main.temp_min }} °C<td>
-                    </tr>
-                    <tr>
-                        <td>Max</td>
-                        <td>{{ weather_json.main.temp_max }} °C<td>
-                    </tr>
-                </tbody></table>
-            </td>
-        </tr>
-        <tr>
-            <td>Wind</td>
-            <td>
-                <table class="table"><tbody>
-                    <tr>
-                        <td>Speed</td>
-                        <td>{{ weather_json.wind.speed }} m/s</td>
-                    </tr>
-                    <tr>
-                        <td>Direction</td>
-                        <td>{{ weather_json.wind.deg }} °</td>
-                    </tr>
-                    <tr>
-                        <td>Gust</td>
-                        <td>{{ weather_json.wind.gust }} m/s</td>
-                    </tr>
-                </tbody></table>
-            </td>
-        </tr>
-    </tbody>
-</table></div>
+<div class="row">
+    <div class="col" style="max-width:49%">
+        <table class="table table-sm d-none">
+        <thead>
+            <th>Key</th>
+            <th>Value</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Main</td>
+                <td>
+                    <table class="table"><tbody>
+                        <tr>
+                            <td>Now</td>
+                            <td>{{ weather_json.weather[0].main }}</td>
+                        </tr>
+                        <tr>
+                            <td>Description</td>
+                            <td>{{ weather_json.weather[0].description }}</td>
+                        </tr>
+                    </tbody></table>
+                </td>
+            </tr>
+            <tr>
+                <td>Temperature</td>
+                <td>
+                    <table class="table"><tbody>
+                        <tr>
+                            <td>Now</td>
+                            <td>{{ weather_json.main.temp }} °C</td>
+                        </tr>
+                        <tr>
+                            <td>Feels like</td>
+                            <td>{{ weather_json.main.feels_like }} °C</td>
+                        </tr>
+                        <tr>
+                            <td>Min</td>
+                            <td>{{ weather_json.main.temp_min }} °C<td>
+                        </tr>
+                        <tr>
+                            <td>Max</td>
+                            <td>{{ weather_json.main.temp_max }} °C<td>
+                        </tr>
+                    </tbody></table>
+                </td>
+            </tr>
+            <tr>
+                <td>Wind</td>
+                <td>
+                    <table class="table"><tbody>
+                        <tr>
+                            <td>Speed</td>
+                            <td>{{ weather_json.wind.speed }} m/s</td>
+                        </tr>
+                        <tr>
+                            <td>Direction</td>
+                            <td>{{ weather_json.wind.deg }} °</td>
+                        </tr>
+                        <tr>
+                            <td>Gust</td>
+                            <td>{{ weather_json.wind.gust }} m/s</td>
+                        </tr>
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+        <div class="row bg-light border border-secondary rounded">
+            <div class="col">Now</div>
+            <div class="col-8">{{ weather_json.weather[0].main }}</div>
+            <div class="w-100"></div>
 
-<div class="d-inline-block w-50">
-    <h5>Full city_json output</h5>
-    <p>{{ city_json }}</p>
+            <div class="col">Description</div>
+            <div class="col-8">{{ weather_json.weather[0].description }}</div>
+            <div class="w-100"></div>
 
-    <h5>Full weather_json output</h5>
-    <p>{{ weather_json }}</p>
+            <div class="col mt-2 bg-secondary text-white">Temperature</div>
+            <div class="w-100"></div>
+
+            <div class="col">Now</div>
+            <div class="col-6">{{ weather_json.main.temp }}</div><div class="col-2">°C</div>
+            <div class="w-100"></div>
+
+            <div class="col">Feels like</div>
+            <div class="col-6">{{ weather_json.main.feels_like }}</div><div class="col-2">°C</div>
+            <div class="w-100"></div>
+
+            <div class="col">Min</div>
+            <div class="col-6">{{ weather_json.main.temp_min }}</div><div class="col-2">°C</div>
+            <div class="w-100"></div>
+
+            <div class="col">Max</div>
+            <div class="col-6">{{ weather_json.main.temp_max }}</div><div class="col-2">°C</div>
+            <div class="w-100"></div>
+            
+            <div class="col mt-2 bg-secondary text-white">Wind</div>
+            <div class="w-100"></div>
+
+            <div class="col">Speed</div>
+            <div class="col-6">{{ weather_json.wind.speed }}</div><div class="col-2">m/s</div>
+            <div class="w-100"></div>
+
+            <div class="col">Direction</div>
+            <div class="col-6">{{ weather_json.wind.deg }}</div><div class="col-2">°</div>
+            <div class="w-100"></div>
+
+            <div class="col">Gust</div>
+            <div class="col-6">{{ weather_json.wind.gust }}</div><div class="col-2">m/s</div>
+            <div class="w-100"></div>
+        </div>
+    </div>
+
+    <div class="col-8">
+        <div class="card mb-2 p-2 bg-light">
+            <h5 class="card-title bg-secondary text-light rounded p-2">Full city_json output</h5>
+            <div class="card-text row">
+                {% for key, value in city_json.items() %}
+                <div class="col-2">{{ key }}</div>
+                <div class="col">{{ value }}</div>
+                <div class="w-100"></div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="card mb-2 p-2 bg-light">
+            <h5 class="card-title bg-secondary text-light rounded p-2">Full weather_json output</h5>
+            <div class="card-text row">
+                {% for key, value in weather_json.items() %}
+                <div class="col-2">{{ key }}</div>
+                <div class="col">{{ value }}</div>
+                <div class="w-100"></div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </div>
-
 {% endblock %}
