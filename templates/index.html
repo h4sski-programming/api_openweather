@@ -5,12 +5,54 @@
 {% block content %}
 
 <table class="table table-sm w-25">
+    <h4>Lon = {{ weather_json.coord.lon }} Lat = {{ weather_json.coord.lat }}</h4>
     <thead>
-        <th>Module</th>
-        <th>Status</th>
+        <th>Key</th>
+        <th>Value</th>
     </thead>
     <tbody>
-        
+        <tr>
+            <td>Temperature [°C]</td>
+            <td>
+                <table class="table"><tbody>
+                    <tr>
+                        <td>Now</td>
+                        <td>{{ weather_json.main.temp }}</td>
+                    </tr>
+                    <tr>
+                        <td>Feels like</td>
+                        <td>{{ weather_json.main.feels_like }}</td>
+                    </tr>
+                    <tr>
+                        <td>Min</td>
+                        <td>{{ weather_json.main.temp_min }}</td>
+                    </tr>
+                    <tr>
+                        <td>Max</td>
+                        <td>{{ weather_json.main.temp_max }}</td>
+                    </tr>
+                </tbody></table>
+            </td>
+        </tr>
+        <tr>
+            <td>Wind</td>
+            <td>
+                <table class="table"><tbody>
+                    <tr>
+                        <td>Speed</td>
+                        <td>{{ weather_json.wind.speed }} m/s</td>
+                    </tr>
+                    <tr>
+                        <td>Direction</td>
+                        <td>{{ weather_json.wind.deg }} °</td>
+                    </tr>
+                    <tr>
+                        <td>Gust</td>
+                        <td>{{ weather_json.wind.gust }} m/s</td>
+                    </tr>
+                </tbody></table>
+            </td>
+        </tr>
     </tbody>
 </table>
 
