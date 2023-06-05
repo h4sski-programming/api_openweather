@@ -9,4 +9,12 @@
 <div class="row">
     {{ render_form(form_city) }}
 </div>
+<div class="row">
+    {% if list_of_cities %}
+    {% for city in list_of_cities %}
+        {{ city }}
+    {% endfor %}
+    {% endif %}
+</div>
+
 {% endblock %}

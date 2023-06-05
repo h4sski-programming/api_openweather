@@ -5,7 +5,7 @@
 - API call  https://openweathermap.org/current
 - city json based on https://openweathermap.org/api/geocoding-api
 - weather json based on https://openweathermap.org/current
-
+- history data API https://openweathermap.org/history
 
 
 # Usefull commands

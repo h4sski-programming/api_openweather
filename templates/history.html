@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+
+<h4>{{ city_json.name }} {{ city_json.country }}</h4>
+<p class="mb-4">LON = {{ city_json.lon }} / LAT = {{ city_json.lat }}</p>
+
+<div class="row">
+    {{ weather_json     }}
+</div>
+{% endblock %}
